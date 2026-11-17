@@ -31,7 +31,7 @@ Version texte pour le personnel : [`USER_GUIDE.md`](USER_GUIDE.md).
 
 ## 1. Installation
 
-1. Téléchargez **`NotaireDZ-Setup-1.0.1.exe`** depuis la [dernière version](../../releases/latest).
+1. Téléchargez **`NotaireDZ-Setup-1.0.1.exe`** depuis la [dernière version](https://github.com/chettouhyacine/notaire-dz/releases/latest).
 2. Lancez-le. L'installation est par utilisateur, **aucun mot de passe administrateur** n'est demandé.
 3. Ouvrez **Notaire DZ** depuis le raccourci du Bureau ou le menu Démarrer.
 

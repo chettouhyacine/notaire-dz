@@ -30,7 +30,7 @@ A text version for staff is in [`USER_GUIDE.md`](USER_GUIDE.md) (French).
 
 ## 1. Installation
 
-1. Download **`NotaireDZ-Setup-1.0.1.exe`** from the [latest release](../../releases/latest).
+1. Download **`NotaireDZ-Setup-1.0.1.exe`** from the [latest release](https://github.com/chettouhyacine/notaire-dz/releases/latest).
 2. Run it. The install is per user, so **no administrator password** is asked.
 3. Launch **Notaire DZ** from the desktop shortcut or the Start menu.
 
