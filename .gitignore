@@ -1,0 +1,24 @@
+# build output
+app/node_modules/
+app/dist/
+desktop/src-tauri/target/
+core/target/
+desktop/src-tauri/gen/
+dist-app/
+installer/stage/
+installer/payload.zip
+installer/*.sed
+launcher.err
+.tools/
+
+# local office data and secrets
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.salt
+*.key
+.env
+*.log
+
+# machine specific helper
+scripts/env.sh

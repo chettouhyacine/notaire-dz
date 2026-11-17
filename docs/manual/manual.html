@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<title>NotaireDZ — دليل الاستعمال</title>
+<style>
+  @page { size: A4; margin: 16mm 14mm 18mm; }
+  * { box-sizing: border-box; }
+  html, body { max-width: 100%; overflow-x: hidden; }
+  body {
+    font-family: "Segoe UI", Tahoma, "Arial", sans-serif;
+    color: #14202e; line-height: 1.85; font-size: 11.5pt; margin: 0;
+  }
+  img, table, .shot { max-width: 100%; }
+  table { table-layout: fixed; }
+  th, td { word-wrap: break-word; overflow-wrap: anywhere; }
+  code, .code { word-break: break-all; }
+  h1 { font-size: 20pt; margin: 0 0 6px; }
+  h2 { font-size: 15pt; margin: 26px 0 8px; padding-bottom: 4px; border-bottom: 2px solid #1f9d78; color: #0e6b52; }
+  h3 { font-size: 12.5pt; margin: 16px 0 4px; }
+  p { margin: 0 0 8px; }
+  ul, ol { margin: 0 0 10px; padding-inline-start: 22px; }
+  li { margin-bottom: 3px; }
+  small, .muted { color: #5b6875; }
+  .fr { direction: ltr; text-align: right; color: #44515f; font-size: 10pt; }
+  code, .code { font-family: Consolas, monospace; background: #eef3f1; padding: 1px 5px; border-radius: 4px; direction: ltr; display: inline-block; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 10.5pt; }
+  th, td { border: 1px solid #cfd8d5; padding: 6px 8px; text-align: start; vertical-align: top; }
+  th { background: #eaf3f0; }
+  .cover { text-align: center; padding-top: 55mm; page-break-after: always; }
+  .cover h1 { font-size: 30pt; color: #0e6b52; }
+  .cover .mark {
+    inline-size: 30mm; block-size: 30mm; line-height: 30mm; margin: 0 auto 10mm;
+    background: #1f9d78; color: #fff; border-radius: 7mm; font-size: 34pt; font-weight: 700;
+  }
+  .cover .rule { width: 40mm; height: 3px; background: #1f9d78; margin: 8mm auto; }
+  .cover small { display: block; margin-top: 3mm; }
+  .toc { page-break-after: always; }
+  .shot { position: relative; margin: 10px 0 6px; border: 1px solid #d6dedd; border-radius: 6px; overflow: hidden; }
+  .shot img { display: block; width: 100%; }
+  /* hides the browser-panel badge that the screenshot tool draws over the page */
+  /* physical coordinates on purpose: the badge sits top-left whatever the text direction is */
+  .shot .cover-badge {
+    position: absolute; left: 1%; top: 0.9%; width: 9.5%; height: 4.6%;
+  }
+  .shot.shell .cover-badge { background: #0b1220; }
+  .shot.gate .cover-badge { background: #131c2b; }
+  .caption { font-size: 9.5pt; color: #5b6875; margin: 0 0 14px; }
+  .note { border-inline-start: 4px solid #1f9d78; background: #f2f8f6; padding: 8px 12px; margin: 10px 0; }
+  .warn { border-inline-start: 4px solid #c0392b; background: #fdf3f2; padding: 8px 12px; margin: 10px 0; }
+  .page-break { page-break-before: always; }
+  .avoid { page-break-inside: avoid; }
+  .footer-note { margin-top: 26px; font-size: 9.5pt; color: #5b6875; border-top: 1px solid #d6dedd; padding-top: 8px; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <div class="mark">ن</div>
+  <h1>مكتب التوثيق</h1>
+  <p style="font-size:13pt;color:#0e6b52;margin:0">دليل الاستعمال — NotaireDZ</p>
+  <p class="fr">Manuel d'utilisation — application de gestion d'étude notariale</p>
+  <div class="rule"></div>
+  <p>نظام مكتبي يعمل دون إنترنت لتسيير الزبائن والملفات والوثائق والسجلات،
+     بواجهة عربية وفرنسية وبيانات مشفّرة على الجهاز.</p>
+  <small>الإصدار 0.1 — المرحلة 2 (الزبائن، الملفات، الوثائق، السجلات)</small>
+  <small>تاريخ التحرير: 16 نوفمبر 2026</small>
+</section>
+
+<section class="toc">
+  <h1>المحتويات</h1>
+  <ol>
+    <li>ما يقدّمه البرنامج اليوم</li>
+    <li>التثبيت والتشغيل وسطح المكتب</li>
+    <li>البدء: إنشاء المكتب، رمز الاستعادة، الدخول</li>
+    <li>نسيان كلمة المرور واستعادتها</li>
+    <li>صفحات التعليمات عند أول استعمال</li>
+    <li>الصفحة الرئيسية</li>
+    <li>الزبائن</li>
+    <li>الملفات والمراحل</li>
+    <li>الإعدادات وبيانات الحساب</li>
+    <li>الأمان والنسخ الاحتياطي</li>
+    <li>أسئلة متكررة</li>
+    <li>الحالة الحالية والمراحل القادمة</li>
+    <li>ملاحظة قانونية</li>
+    <li class="fr">Résumé en français</li>
+  </ol>
+</section>
+
+<h2>1. ما يقدّمه البرنامج اليوم</h2>
+<p>البرنامج يساعد المكتب على إمساك العمل اليومي في مكان واحد: استقبال الزبون، فتح الملف،
+   متابعة المراحل والآجال، وحفظ الوثائق، مع سجل تدقيق يجعل كل إجراء قابلًا للتتبع.</p>
+<table>
+  <tr><th>المجال</th><th>ما هو متوفر الآن</th></tr>
+  <tr><td>الزبائن</td><td>أسماء عربية ولاتينية، تاريخ الميلاد، رقم التعريف الوطني، بحث فوري، وكشف التشابه بين الأسماء لتجنّب التكرار.</td></tr>
+  <tr><td>الملفات</td><td>فتح ملف بعقد ومرحلة إنجاز وأجل، تصفية حسب الصلاحيات، وشارة لكل مرحلة.</td></tr>
+  <tr><td>الوثائق</td><td>خزنة ملفات مشفّرة لكل وثيقة مفتاح خاص وبصمة تحقّق SHA-256، مع منع الحذف عند الحجز القانوني.</td></tr>
+  <tr><td>السجلات</td><td>ترقيم السجلات بعد التوقيع فقط، ووصولات، وإعادات نسخ، وسلسلة تدقيق متصلة.</td></tr>
+  <tr><td>اللغة</td><td>عربية أساسية مع فرنسية، وتغيير فوري دون إعادة تشغيل، واتجاه الواجهة يتبدّل تلقائيًا.</td></tr>
+  <tr><td>الأمان</td><td>تشفير على مستوى الحقول، حساب واحد للمكتب في هذه المرحلة، ولا أي اتصال بالإنترنت.</td></tr>
+</table>
+<p class="muted">ما لا يزال قيد الإنجاز مذكور صراحة في القسم 12، ولا يُعرض في البرنامج كأنه جاهز.</p>
+
+<h2>2. التثبيت والتشغيل</h2>
+<p>البرنامج يعمل من ملف واحد على ويندوز، ولا يحتاج إنترنت ولا حسابًا سحابيًا:</p>
+<ol>
+  <li>افتح اختصار <strong>NotaireDZ</strong> من سطح المكتب.</li>
+  <li>عند أول تشغيل يُنشأ مجلد البيانات في <span class="code">%LOCALAPPDATA%\NotaireDZ</span>.</li>
+  <li>لا تنسخ هذا المجلد إلى مكان غير موثوق: هو نسخة المكتب كاملة، مشفّرة.</li>
+</ol>
+<div class="note">للتجربة والعرض يوجد اختصار ثانٍ <strong>NotaireDZ (demo)</strong> يفتح مكتبًا تجريبيًا
+  دون كلمة مرور، في مجلد منفصل <span class="code">%LOCALAPPDATA%\NotaireDZ-demo</span>. لا تُدخل فيه بيانات حقيقية.</div>
+
+<h2 class="page-break">3. البدء: أول تشغيل</h2>
+<p>عند أول تشغيل يُنشئ البرنامج المكتب تلقائيًا ويحفظ مفتاحه في الجهاز، ثم يعرض شاشة الدخول
+   وقد عُبّئت مسبقًا باسم المستخدم «admin» وكلمة المرور «admin». اضغط «دخول» لتبدأ.</p>
+<p>أقصر كلمة مرور مقبولة خمسة أحرف. غيّرها فورًا من «بيانات الحساب» في الإعدادات.</p>
+
+<div class="shot gate">
+  <span class="cover-badge"></span>
+  <img src="img/shot-01-welcome.png" alt="شاشة البداية" />
+</div>
+<p class="caption">شاشة البداية: الدخول إلى المكتب أو استعادة الوصول.</p>
+
+<div class="warn"><strong>مهم:</strong> بيانات المكتب مشفّرة على القرص بمفتاح جهاز محفوظ في ملف
+  <span class="code">office.key</span> بجانب قاعدة البيانات. احفظ مجلد البيانات كاملًا ولا تنسخه إلى
+  مكان غير موثوق، واحتفظ برمز الاستعادة على ورق في مكان منفصل.</div>
+
+<h2 class="page-break">4. نسيان كلمة المرور</h2>
+<p>من شاشة الدخول اضغط «نسيت عبارة المرور؟»، ثم أدخل اسم المستخدم ورمز الاستعادة وعبارة مرور جديدة.
+   البيانات تبقى كما هي، ويعطيك البرنامج رمز استعادة جديدًا لأن الرمز المستعمل يُلغى.</p>
+
+<div class="shot gate">
+  <span class="cover-badge"></span>
+  <img src="img/shot-03-recovery.png" alt="شاشة استعادة الوصول" />
+</div>
+<p class="caption">استعادة الوصول: رمز الاستعادة + عبارة مرور جديدة، دون فقدان أي ملف.</p>
+
+<h2>5. صفحات التعليمات عند أول استعمال</h2>
+<p>بعد أول دخول تظهر خمس صفحات قصيرة تشرح ما يقدّمه البرنامج، طريقة العمل، الوثائق والآجال،
+   الأمان، وما هو قيد الإنجاز. زر «التالي» ينقلك، و«تخطّي» يغلقها فورًا، ولا تعود تظهر بعد ذلك.</p>
+
+<div class="shot gate">
+  <span class="cover-badge"></span>
+  <img src="img/shot-04-onboarding.png" alt="صفحات التعليمات" />
+</div>
+<p class="caption">صفحات التعليمات: الخطوة 1 من 5، مع تخطّي في أي لحظة.</p>
+
+<h2 class="page-break">6. الصفحة الرئيسية</h2>
+<p>أربع بطاقات تلخّص اليوم (المواعيد، ملفات تنتظر إجراءً، أرصدة غير مسددة، وثائق تنتهي صلاحيتها)،
+   وزر أساسي واحد «ملف جديد»، وبجانبه زر «بيانات الحساب».</p>
+
+<div class="shot shell">
+  <span class="cover-badge"></span>
+  <img src="img/shot-05-home.png" alt="الصفحة الرئيسية" />
+</div>
+<p class="caption">الرئيسية: القائمة الجانبية بثمانية مداخل ثابتة، واللغة تبدّل من أعلى الشاشة.</p>
+
+<h2>7. الزبائن</h2>
+<p>«زبائن» ← «زبون جديد». الاسم يُسجّل بالحروف اللاتينية والعربية معًا: الأولى للوثائق الرسمية
+   والثانية للعقود. اكتب اللقب أولًا، ثم الاسم، ثم تاريخ الميلاد ورقم التعريف الوطني.</p>
+<div class="shot shell">
+  <span class="cover-badge"></span>
+  <img src="img/shot-06-clients.png" alt="شاشة الزبائن" />
+</div>
+<p class="caption">الزبائن: نموذج عمود واحد، والحقول العربية تُكتب من اليمين إلى اليسار.</p>
+<p>البحث في الأعلى يعمل بالاسم العربي أو اللاتيني، ويتجاهل التشكيل والفروق بين الحروف المتشابهة،
+   ويكشف الأسماء القريبة من بعضها لتجنّب إنشاء زبون مكرّر.</p>
+
+<h2 class="page-break">8. الملفات والمراحل</h2>
+<p>«ملفات» ← «ملف جديد»: اختر نوع العقد والزبون والأجل. لكل ملف مرحلة إنجاز تظهر كشارة،
+   وقائمة وثائق، وتنبيه عند اقتراب الأجل.</p>
+<div class="shot shell">
+  <span class="cover-badge"></span>
+  <img src="img/shot-07-cases.png" alt="شاشة الملفات" />
+</div>
+<p class="caption">الملفات: مراحل الإنجاز وآجالها.</p>
+<div class="note">لا يُستهلك رقم السجل إلا بعد التوقيع: الملف يمكن أن يبقى مفتوحًا دون أن يأخذ رقمًا،
+  وهذا ما يمنع فجوات في الترقيم.</div>
+
+<h2>9. الإعدادات وبيانات الحساب</h2>
+<p>من الرئيسية اضغط «بيانات الحساب» (أو «الإعدادات» في القائمة): يمكنك تغيير اسم المستخدم،
+   وتغيير كلمة المرور بشرط إدخال الحالية. تغيير كلمة المرور يحدّث بيانات الدخول فقط، والبيانات تبقى كما هي.</p>
+<div class="shot shell">
+  <span class="cover-badge"></span>
+  <img src="img/shot-08-settings.png" alt="الإعدادات وبيانات الحساب" />
+</div>
+<p class="caption">الإعدادات: اللغة، لغة صياغة العقود، شكل الأرقام، بيانات الحساب، ثم الأمان والتدقيق.</p>
+
+<h2>10. الأمان والنسخ الاحتياطي</h2>
+<ul>
+  <li>البيانات في الجهاز فقط، مشفّرة بمفتاح جهاز مستقل عن كلمة المرور.</li>
+  <li>لا يوجد أي اتصال بالإنترنت ولا إرسال لأي معلومة.</li>
+  <li>كل إجراء يُكتب في سلسلة تدقيق مربوطة بتجزئة؛ أي تعديل خارجي يظهر كخلل في السلسلة.</li>
+  <li>من «الأمان والتدقيق» يمكن عرض بصمة السلسلة وإنشاء نسخة احتياطية مشفّرة.</li>
+</ul>
+<div class="warn">احفظ نسخة احتياطية دوريًا على وسيط خارجي. النسخة مشفّرة بعبارة مرور تختارها عند إنشائها،
+  فاحتفظ بها مع رمز الاستعادة في مكان منفصل عن الجهاز.</div>
+
+<h2>11. أسئلة متكررة</h2>
+<h3>نسيت كلمة المرور ولا أملك رمز الاستعادة</h3>
+<p>لا يمكن الدخول إلى المكتب بدون كلمة المرور. البيانات تبقى على القرص ومفتاحها في
+   <span class="code">office.key</span>، لكن إعادة ضبط بيانات الدخول تحتاج مساعدة تقنية بفتح الجهاز نفسه.</p>
+<h3>أين تُحفظ البيانات؟</h3>
+<p>في <span class="code">%LOCALAPPDATA%\NotaireDZ</span> — ملف قاعدة البيانات، ملف الملح، ملف مفتاح
+   الجهاز، مجلد النسخ الاحتياطية، وخزنة الوثائق.</p>
+<h3>هل يعمل دون إنترنت؟</h3>
+<p>نعم، بالكامل. لا يحتاج البرنامج شبكة في أي مرحلة.</p>
+<h3>هل يمكن استعماله على جهازين؟</h3>
+<p>ليس في هذه المرحلة: النسخة الحالية لمكتب واحد على جهاز واحد. النقل بين الأجهزة يتم لاحقًا
+   عبر نسخة احتياطية موقّعة.</p>
+
+<h2 class="page-break">12. الحالة الحالية والمراحل القادمة</h2>
+<p>النسخة المسلّمة تغطي: الزبائن، الملفات، المراحل والآجال، الوثائق المشفّرة، السجلات، الحساب،
+   والتدقيق. أما ما يلي فمُخطَّط ولم يُنجز بعد، ويُذكر هنا حتى لا يُفهم أنه متوفر:</p>
+<table>
+  <tr><th>الجزء</th><th>الحالة</th></tr>
+  <tr><td>صياغة العقود ومحرّك الرسوم والضرائب</td><td>قيد الإنجاز — قواعد نسخة قابلة للتعديل بتواريخ سريان</td></tr>
+  <tr><td>المحاسبة والوصولات والأرصدة</td><td>قيد الإنجاز</td></tr>
+  <tr><td>سجل الامتثال والتصريحات</td><td>قيد الإنجاز</td></tr>
+  <tr><td>المواعيد والأجندة</td><td>لم يبدأ</td></tr>
+  <tr><td>طباعة وتصدير العقود</td><td>لم يبدأ</td></tr>
+  <tr><td>عدة مستخدمين بصلاحيات مختلفة</td><td>مخطط لها (البنية جاهزة)</td></tr>
+</table>
+
+<h2>13. ملاحظة قانونية</h2>
+<p>هذا البرنامج أداة مساعدة. لا يُنشئ عقودًا ولا يُصدر أحكامًا ولا يُعفي الموثق من مراجعة كل رقم
+   وكل بند قبل التوقيع. كل ما ينتجه قابل للتعديل والمراجعة، والقرار النهائي للموثق وحده.</p>
+
+<h2 class="page-break fr">Résumé en français</h2>
+<div class="fr">
+  <p><strong>NotaireDZ</strong> est une application de bureau, hors ligne, bilingue (arabe / français),
+  destinée à la gestion quotidienne d'une étude notariale. Les données restent sur l'ordinateur et
+  sont chiffrées par la phrase de l'étude.</p>
+  <p><strong>Fonctions disponibles :</strong> clients en écriture arabe et latine avec détection des
+  doublons, dossiers avec acte, étapes et délais, pièces chiffrées avec empreinte de contrôle,
+  registres numérotés après signature, journal d'audit chaîné, sauvegarde chiffrée, gestion du compte.</p>
+  <p><strong>Premier démarrage :</strong> bouton « Entrer dans l'étude » (identifiant <code>admin</code>),
+  création de l'étude, puis affichage unique d'un <strong>code de récupération</strong> — à recopier et
+  conserver : c'est le seul moyen de rouvrir l'étude si la phrase secrète est oubliée.</p>
+  <p><strong>Mot de passe oublié :</strong> « Phrase secrète oubliée ? » → identifiant + code de
+  récupération + nouvelle phrase. Les données restent intactes et un nouveau code est émis.</p>
+  <p><strong>À ne pas attendre de cette version :</strong> rédaction d'actes et calcul des honoraires,
+  comptabilité, conformité, agenda et impression — prévus pour les étapes suivantes (section 12).</p>
+</div>
+
+<p class="footer-note">NotaireDZ — دليل الاستعمال، الإصدار 0.1. أُعدّ هذا الدليل من شاشات البرنامج الحقيقية.
+  الصور مأخوذة من النسخة الحالية، وقد تختلف بعض التفاصيل في الإصدارات اللاحقة.</p>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      No remote content: no CDN, no web fonts, no analytics.
+      The Content-Security-Policy is delivered as an HTTP header by the Tauri shell
+      (desktop/src-tauri/tauri.conf.json). It is deliberately not duplicated in a <meta> tag:
+      a meta CSP cannot carry frame-ancestors, and it would block the dev server's inline styles.
+    -->
+    <title>NotaireDZ</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
